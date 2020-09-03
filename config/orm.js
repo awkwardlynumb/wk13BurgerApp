@@ -1,13 +1,12 @@
 const connection = require("./connection.js");
 
 const orm = {
-  selectBurgers: function (eaten) {
+  selectBurgers: function (cb) {
     connection.query(
-      "select * from burgers where devoured = ?",
-      [eaten],
+      "select * from burgers",
       function (err, res) {
         if (err) throw err;
-        console.log(res);
+        cb(res);
       }
     );
   },
@@ -21,10 +20,10 @@ const orm = {
       }
     );
   },
-  devour: function (burger) {
+  devour: function (id) {
     connection.query(
-      "update burgers set devoured = 1 where name = ?",
-      [burger],
+      "update burgers set devoured = 1 where id = ?",
+      [id],
       function (err) {
         if (err) throw err;
         console.log(burger + "DEVOURED!");

@@ -1,0 +1,18 @@
+<div class="col-md-6">
+    <ol>
+        {{#each burgers}}
+        {{#unless devoured}}
+        <li>{{name}}</li>
+        {{/unless}}
+        {{/each}}
+    </ol>
+</div>
+<div class="col-md-6">
+    <ol>
+        {{#each burgers}}
+        {{#if devoured}}
+        <li>{{name}}</li>
+        {{/if}}
+        {{/each}}
+    </ol>
+</div>
