@@ -13,7 +13,7 @@
             <ol>
                 {{#each burgers}}
                 {{#unless devoured}}
-                <li id="burger{{id}}">{{name}} <button class="devour" id="devour{{id}}">Devour!</button></li>
+                <li id="burger{{id}}">{{name}} <button class="devour" id={{id}}>Devour!</button></li>
                 {{/unless}}
                 {{/each}}
             </ol>

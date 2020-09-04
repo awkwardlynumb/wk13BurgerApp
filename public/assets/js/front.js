@@ -12,11 +12,13 @@ $("#addBtn").on("click", function (event) {
   });
 });
 $(".devour").on("click", function (event) {
-  const id = $(this).data("id");
+  const id = $(this).attr("id")
+  console.log(id)
   const devoured = {
     devoured: 1,
   };
-  $.ajax("/api/burgers" + id, {
+  console.log(devoured)
+  $.ajax("/api/burgers/" + id, {
     type: "PUT",
     data: devoured,
   }).then(function () {

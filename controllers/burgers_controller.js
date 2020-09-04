@@ -16,6 +16,7 @@ router.post("/api/burgers", function(req, res) {
 
 router.put("api/burgers/:id", function(req, res){
     burgers.devour(req.params.id, function(result){
+        console.log(req.params.id)
         if (result.changedRows == 0) {
             return res.status(404).end();
           } else {
