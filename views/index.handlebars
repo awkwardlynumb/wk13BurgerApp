@@ -1,18 +1,31 @@
-<div class="col-md-6">
-    <ol>
-        {{#each burgers}}
-        {{#unless devoured}}
-        <li>{{name}}</li>
-        {{/unless}}
-        {{/each}}
-    </ol>
-</div>
-<div class="col-md-6">
-    <ol>
-        {{#each burgers}}
-        {{#if devoured}}
-        <li>{{name}}</li>
-        {{/if}}
-        {{/each}}
-    </ol>
+<div class="container">
+    <div class="jumbotron">
+        <h2>Burger Tracker</h2>
+        <img class="img-fluid" src="./assets/img/burger.png" alt="burger icon">
+        <form class="addForm">
+            <label for="newBurger">Add a Burger</label>
+            <input type="text" id="newBurger" placeholder="Burger Name Here!">
+            <button id="addBtn">Submit Burger</button>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-6, undevoured">
+            <ol>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li id="burger{{id}}">{{name}} <button class="devour" id="devour{{id}}">Devour!</button></li>
+                {{/unless}}
+                {{/each}}
+            </ol>
+        </div>
+        <div class="col-md-6, devoured">
+            <ol>
+                {{#each burgers}}
+                {{#if devoured}}
+                <li id="burger{{id}}">{{name}}</li>
+                {{/if}}
+                {{/each}}
+            </ol>
+        </div>
+    </div>
 </div>

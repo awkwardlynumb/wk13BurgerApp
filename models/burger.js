@@ -6,13 +6,13 @@ const burger = {
       cb(result);
     });
   },
-  addBurger: function (cb) {
-    orm.addBurger(function (result) {
+  addBurger: function (burger, cb) {
+    orm.addBurger(burger, function (result) {
       cb(result);
     });
   },
-  devour: function () {
-    orm.devour(function (result) {
+  devour: function (id, cb) {
+    orm.devour(id, function (result) {
       cb(result);
     });
   },
